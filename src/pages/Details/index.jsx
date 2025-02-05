@@ -9,6 +9,7 @@ export function Details() {
     <Container>
 
       <h1>Hello World!</h1>
+      <p>made by Nicolas Kraide, A.K.A best developer of his house</p>
 
     </Container>
   )
