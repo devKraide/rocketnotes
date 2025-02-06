@@ -1,9 +1,14 @@
 import { Container } from "./styles";
+import PropTypes from 'prop-types';
 
-export function Button() {
+export function Button(props) {
   return (
-    < Container type="button">
-      my button
+    <Container type="button">
+      {props.title}      
     </Container>
   )
 }
+
+Button.propTypes = {
+  title: PropTypes.string.isRequired,
+};

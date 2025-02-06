@@ -12,7 +12,11 @@ export function Details() {
       <h1>Hello World!</h1>
       <p>made by Nicolas Kraide, A.K.A best developer of his house</p>
 
-    <Button/>
+    <Button title="join"/>
+    <Button title="nicolas"/>
+    <Button title="cadaster"/>
+
     </Container>
   )
 }
+<Button/>
