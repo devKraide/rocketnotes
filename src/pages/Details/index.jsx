@@ -3,18 +3,14 @@
 
 import { Container } from "./styles.js";
 import { Button } from "../../components/Button";
+import { Header } from "../../components/Header";
 
 export function Details() {
 
   return (
     <Container>
-
-      <h1>Hello World!</h1>
-      <p>made by Nicolas Kraide, A.K.A best developer of his house</p>
-
-    <Button title="join" loading/>
-    <Button title="nicolas"/>
-    <Button title="cadaster"/>
+      <Header/>
+    <Button title="Voltar" />
 
     </Container>
   )
