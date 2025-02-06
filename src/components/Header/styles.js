@@ -52,3 +52,17 @@ export const Profile = styled.div`
   }
 
 `;
+
+export const Logout = styled.button`
+  
+  background-color: transparent;
+  border: none;
+
+  >svg {
+    
+  color: ${(props) => props.theme.COLORS.GRAY_100};
+  font-size: 36px;
+
+}
+
+`;
