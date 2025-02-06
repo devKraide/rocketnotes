@@ -4,15 +4,25 @@
 import { Container } from "./styles.js";
 import { Button } from "../../components/Button";
 import { Header } from "../../components/Header";
-
+import { Section } from "../../components/Section";
 export function Details() {
 
   return (
     <Container>
-      <Header/>
-    <Button title="Voltar" />
+
+      <Header />
+
+      <Section title="Links úteis">
+        <ul>
+          <li>link1</li>
+          <li>link2</li>
+          <li>link3</li>
+        </ul>
+      </Section>
+
+      <Button title="Voltar" />
 
     </Container>
   )
 }
-<Button/>
+<Button />
