@@ -20,6 +20,13 @@ export function Details() {
         </ul>
       </Section>
 
+      <Section title="Marcadores">
+        <button>express</button>
+        <button>nodejs</button>
+
+      </Section>
+
+
       <Button title="Voltar" />
 
     </Container>
