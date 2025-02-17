@@ -19,27 +19,47 @@ export const Container = styled.div`
   `;
 
 export const Brand = styled.div`
+  grid-area: brand;
+
+  justify-content: center;
+  display: flex;
+  align-items: center;
   
+
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: ${({theme}) => theme.COLORS.BACKGROUND_700 };
+
+  background-color: ${({theme}) => theme.COLORS.BACKGROUND_900 };
+
+  > h1 {
+    font-size: 24px;
+    color: ${({theme}) => theme.COLORS.ORANGE};
+  }
 
 `;
 
 export const Menu = styled.ul`
+  grid-area: menu;
 
 
 `;
 
 export const Search = styled.div`
+  grid-area: search;
 
 
 `;
 
 
 export const Content = styled.div`
+  grid-area: content;
 
 
 `;
 
 export const NewNote = styled.button`
+  grid-area: newnote;
 
 
 `;
