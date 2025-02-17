@@ -7,12 +7,16 @@ import { Button } from "../../components/Button";
 import { Header } from "../../components/Header";
 import { Section } from "../../components/Section";
 import { Tag } from "../../components/Tag";
+import { ButtonText } from "../../components/ButtonText";
+
 export function Details() {
 
   return (
     <Container>
 
       <Header />
+
+      <ButtonText title="test"/>
 
       <Section title="Links úteis">
         <Links>
@@ -34,7 +38,6 @@ export function Details() {
         <Tag title =" nodejs"/>
 
       </Section>
-
 
       <Button title="Voltar" />
 
