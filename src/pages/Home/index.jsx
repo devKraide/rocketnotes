@@ -1,11 +1,11 @@
-import { Container, Brand, Search, Menu, Content, NewNote} from './styles.js';
+import { Container, Brand, Search, Menu, Content, NewNote } from './styles.js';
 
+import { FiPlus } from 'react-icons/fi';
 
+import { Header } from '../../components/Header';
+import { ButtonText } from '../../components/ButtonText';
 
-import {Header} from '../../components/Header';
-import {ButtonText} from '../../components/ButtonText';
-
-export function Home () {
+export function Home() {
 
   return (
     <Container>
@@ -15,13 +15,13 @@ export function Home () {
         </h1>
       </Brand>
 
-      <Header/>
-      
+      <Header />
+
       <Menu>
         <li><ButtonText title="Todos" $isactive /></li>
-        <li><ButtonText title="React"  /></li>
-        <li><ButtonText title="Node"  /></li>
-        
+        <li><ButtonText title="React" /></li>
+        <li><ButtonText title="Node" /></li>
+
       </Menu>
 
       <Search>
@@ -31,8 +31,11 @@ export function Home () {
       <Content>
 
       </Content>
- 
-      <NewNote> </NewNote>
+
+      <NewNote>
+        <FiPlus />
+        Criar nota
+      </NewNote>
     </Container>
   );
 
