@@ -1,6 +1,6 @@
 import { Container, Brand, Search, Menu, Content, NewNote } from './styles.js';
 
-import { FiPlus, FiSearch } from 'react-icons/fi';
+import { FiPlus } from 'react-icons/fi';
 
 import { Header } from '../../components/Header';
 import { ButtonText } from '../../components/ButtonText';
