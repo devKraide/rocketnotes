@@ -15,6 +15,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <GlobalStyle/>
         <SignIn />
     </ThemeProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 )
          
