@@ -24,3 +24,4 @@ export const NoteContainer = styled.button`
     margin-top: 24px;
   }
 `;
+

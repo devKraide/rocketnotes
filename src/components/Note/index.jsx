@@ -1,23 +1,19 @@
+/* eslint-disable react/prop-types */
 import { NoteContainer } from './style';
 import { Tag } from '../Tag';
 
-// eslint-disable-next-line react/prop-types
-export function Note({ title, tag, ...rest }) {
+export function Note({ data, ...rest }) {
   return (
     <NoteContainer {...rest}>
-    
-      <h1>{title}</h1>
-
+      <h1>{data.title}</h1>
       {
-        tag &&
+        data.tags &&
         <footer>
           {
-            // eslint-disable-next-line react/prop-types
-            tag.map(tag => <Tag key={tag.id} title={tag.name} />)
+            data.tags.map(tag => <Tag key={tag.id} title={tag.name} />)
           }
         </footer>
       } 
-
     </NoteContainer>
   );
 };
