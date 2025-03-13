@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import backgroundImg from "../../assets/background.png";
+
 export const SignInContainer = styled.div`  
 
   height: 100vh;
@@ -45,4 +47,12 @@ export const Form = styled.form`
   }
 
 
+`;
+
+export const Background = styled.div`
+
+  flex: 1;
+  background: url(${backgroundImg}) no-repeat center center;
+  background-size: cover;
+  filter: brightness(0.5);
 `;
