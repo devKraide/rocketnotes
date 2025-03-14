@@ -4,7 +4,7 @@ import { Tag } from '../Tag';
 
 export function Note({ data, ...rest }) {
   return (
-    <NoteContainer to="/details/:id" {...rest}>
+    <NoteContainer  {...rest}>
       <HLink to="/details/:id">{data.title}</HLink>
       {
         data.tags &&
