@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { FiPlus, FiX } from 'react-icons/fi';
 
 import { NoteItemContainer } from './style';
@@ -12,9 +13,13 @@ export function NoteItem({ isNew, value, onClick, ...rest }) {
         {...rest}
       />
 
-      <button type="button" onClick={onClick}>
+      <button 
+      type="button" 
+      onClick={onClick}
+      className = {isNew ? "button-add" : "button-delete"}
+      >
         {isNew ? <FiPlus /> : <FiX />}
-      </button>
+      </button> 
     </NoteItemContainer>
   )
 }
