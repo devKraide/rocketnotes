@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import {Link} from "react-router-dom";
+
 
 // ...existing code...
 export const NoteContainer = styled.button`
@@ -9,15 +11,10 @@ export const NoteContainer = styled.button`
   border-radius: 10px;
   padding: 22px;
   margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
 
-  > h1 {
-    flex: 1;
-    text-align: left;
-    font-weight: 700;
-    font-size: 24px;
-    color: ${({ theme }) => theme.COLORS.WHITE};
-  }
-
+  
   > footer {
     width: 100%;
     display: flex;
@@ -25,3 +22,14 @@ export const NoteContainer = styled.button`
   }
 `;
 
+
+export const HLink = styled(Link)` 
+  flex: 1;
+  text-align: left;
+  font-weight: 700;
+  font-size: 24px;
+  color: ${({ theme }) => theme.COLORS.WHITE};
+
+  width: 100%;
+  align-self: flex-start;
+`;

@@ -54,5 +54,5 @@ export function Details() {
 
     </Container>
   )
-}
+} 
 <Button />

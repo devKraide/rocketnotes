@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import {Link} from "react-router-dom";
+
 export const HeaderContainer = styled.header`
   grid-area: header;
 
@@ -17,41 +19,33 @@ export const HeaderContainer = styled.header`
 
 `;
 
-export const Profile = styled.div`
-
+export const Profile = styled(Link)`
   display: flex;
   align-items: center;
 
   > img {
-    
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    margin-right: 16px;
-
   }
 
   > div {
-
     display: flex;
     flex-direction: column;
+    margin-left: 16px;
+    line-height: 24px;
 
-     span {
-
-      font-size: 12px;
-      color: ${(props) => props.theme.COLORS.GREY_100};
-      line-height: 15px;
+    span {
+      font-size: 14px;
+      color: ${({ theme }) => theme.COLORS.WHITE};
     }
 
-     strong {
-
+    strong {
       font-size: 18px;
-      color: ${(props) => props.theme.COLORS.WHITE};
-
+      color: ${({ theme }) => theme.COLORS.WHITE};
     }
   }
-
-`;
+`
 
 export const Logout = styled.button`
   

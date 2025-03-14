@@ -5,7 +5,7 @@ export function Header() {
 
   return (
     <HeaderContainer>
-      <Profile>
+      <Profile to="/profile">
 
         <img
           src="https://github.com/devKraide.png"
@@ -13,7 +13,7 @@ export function Header() {
         />
 
         <div>
-          <span>Welcome</span>
+          <span>Bem-vindo,</span>
           <strong>devKraide</strong>
         </div>
       </Profile>
