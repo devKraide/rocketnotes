@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 
-export const Container = styled.button`
+export const ButtonContainer = styled.button`
   width: 100%;
   background-color: ${(props) => props.theme.COLORS.ORANGE};
   color: ${(props) => props.theme.COLORS.BACKGROUND_800};

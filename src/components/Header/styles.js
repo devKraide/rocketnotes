@@ -45,7 +45,7 @@ export const Profile = styled(Link)`
       color: ${({ theme }) => theme.COLORS.WHITE};
     }
   }
-`
+`;
 
 export const Logout = styled.button`
   
