@@ -14,13 +14,14 @@ function AuthProvider({ children }) {
     try {
 
       const response = await api.post("/sessions", { email, password })
-      const { user, token } = response.data;
+      const { token, user } = response.data;
 
       localStorage.setItem("@rocketnotes:user", JSON.stringify(user))
       localStorage.setItem("@rocketnotes:token", token)
 
-      api.defaults.headers.common['Authorization'] = `Bearer ${token}`
-      setData({ user, token })
+      api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+
+      setData({ token, user });
 
     } catch (error) {
 
