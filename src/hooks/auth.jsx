@@ -20,7 +20,7 @@ function AuthProvider({ children }) {
       localStorage.setItem("@rocketnotes:token", token)
 
       api.defaults.headers.common['Authorization'] = `Bearer ${token}`
-      setData({ user, token })  
+      setData({ user, token })
 
     } catch (error) {
 
@@ -44,6 +44,24 @@ function AuthProvider({ children }) {
     setData({})
   }
 
+  async function updateProfile({ user }) {
+    try {
+
+      await api.put('/users', user)
+      localStorage.setItem("@rocketnotes:user", JSON.stringify(user))
+      
+      setData({user, token: data.token})
+      alert("Profile has been updated!")
+
+    } catch (error) { 
+      if (error.response) {
+        alert(error.response.data.message)
+      } else {
+        alert("Não foi possível atualizaro perfil")
+      }
+    }
+  }
+
   useEffect(() => {
     const token = localStorage.getItem("@rocketnotes:token")
     const user = localStorage.getItem("@rocketnotes:user")
@@ -61,6 +79,7 @@ function AuthProvider({ children }) {
     <AuthContext.Provider value={{
       signIn,
       signOut,
+      updateProfile,
       user: data.user
     }} >
       {children}
