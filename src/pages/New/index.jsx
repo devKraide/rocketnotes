@@ -1,15 +1,25 @@
+import { useState } from "react";
 import { NoteItem } from "../../components/NoteItem";
 import { TextArea } from "../../components/TextArea";
 import { Section } from "../../components/Section";
-import { Header } from "../../components/Header";
 import { Button } from "../../components/Button";
+import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { NewContainer, Form } from "./style";
 
 export function New() {
+  const [links, setLinks] = useState([])
+  const [newLink, setNewLink] = useState("")
+
+  function handleAddLink() {
+    setLinks(prevState => [...prevState, newLink])
+    setNewLink('');
+  }
+
+
   return (
     <NewContainer>
       <Header />
@@ -26,8 +36,24 @@ export function New() {
           <TextArea placeholder='Observações' />
 
           <Section title="Links úteis">
-            <NoteItem value="https://apple.com" />
-            <NoteItem isNew placeholder='Novo link' />
+
+            {
+              links.map((link, index) => (
+                <NoteItem
+                  key={String(index)}
+                  value={link}
+                  onClick={() => { }}
+                />
+              ))
+            }
+
+            <NoteItem
+              isNew
+              placeholder='Novo link'
+              value={newLink}
+              onChange={e => setNewLink(e.target.value)}
+              onClick={handleAddLink}
+            />
           </Section>
 
 
@@ -40,7 +66,7 @@ export function New() {
 
           </Section>
 
-          <Button title="Salvar"/>
+          <Button title="Salvar" />
         </Form>
       </main>
 
