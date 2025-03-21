@@ -19,17 +19,17 @@ export function Header() {
 
         <img
           src={avatarUrl}
-          alt="profile image"
+          alt={user.name}
         />
 
         <div>
           <span>Bem-vindo,</span>
-          <strong>devKraide</strong>
+          <strong>{user.name}</strong>
         </div>
       </Profile>
 
 
-      <Logout onClick={signOut}>
+      <Logout onClick={signOut}>  
         <RiShutDownLine />
       </Logout>
 
