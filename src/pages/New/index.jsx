@@ -50,6 +50,15 @@ export function New() {
   const navigate = useNavigate();
 
   async function handleNewNote() {
+
+    if(!title){
+      alert("Por favor, insira o título da nota")
+    }
+
+    if(newTag || newLink){
+      alert("Links ou Tags não confirmados serão perdidos! Por favor, revise os campos de texto.")
+    }
+
     await api.post("/notes", {
       title,
       description,
