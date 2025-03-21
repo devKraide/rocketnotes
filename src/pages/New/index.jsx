@@ -11,8 +11,10 @@ import { Link } from "react-router-dom";
 import { NewContainer, Form } from "./style";
 
 export function New() {
+  //link
   const [links, setLinks] = useState([])
   const [newLink, setNewLink] = useState("")
+
 
   function handleAddLink() {
     setLinks(prevState => [...prevState, newLink])
@@ -21,6 +23,21 @@ export function New() {
 
   function handleRemoveLink(deleted) {
     setLinks(prevState => prevState.filter(link => link !== deleted))
+
+  }
+
+  //tags
+
+  const [tags, setTags] = useState([])
+  const [newTag, setNewTag] = useState("")
+
+  function handleAddTag() {
+    setTags(prevState => [...prevState, newTag])
+    setNewTag('');
+  }
+
+  function handleRemoveTag(deleted) {
+    setTags(prevState => prevState.filter(tag => tag !== deleted))
 
   }
 
@@ -64,9 +81,22 @@ export function New() {
 
           <Section title="Marcadores">
             <div className="tags">
+            {
+              tags.map((tag, index) => (
+                <NoteItem
+                  key={String(index)}
+                  value={tag}
+                  onClick={() => handleRemoveTag(tag) } />
+              ))
+            }
 
-              <NoteItem value="React" />
-              <NoteItem isNew placeholder='Novo marcador' />
+              <NoteItem
+                value={newTag}
+                onChange={e => setNewTag(e.target.value)}
+                onClick={handleAddTag}
+                isNew
+                placeholder='Novo marcador'
+              />
             </div>
 
           </Section>
