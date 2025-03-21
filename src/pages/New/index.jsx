@@ -52,11 +52,12 @@ export function New() {
   async function handleNewNote() {
 
     if(!title){
-      alert("Por favor, insira o título da nota")
+      return alert("Por favor, insira o título da nota")
     }
 
     if(newTag || newLink){
-      alert("Links ou Tags não confirmados serão perdidos! Por favor, revise os campos de texto.")
+      return alert("Links ou Tags não confirmados serão perdidos! Por favor, revise os campos de texto.")
+
     }
 
     await api.post("/notes", {
