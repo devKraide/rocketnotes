@@ -21,13 +21,25 @@ export function Home() {
 
 
   function handleSelectedTag(tagName) {
+    if (tagName === 'all') {
+      return setSelectedTags([])
+    }
+
     const alreadySelected = selectedTags.includes(tagName)
 
     if (alreadySelected) {
       const filteredTags = selectedTags.filter(tag => tag !== tagName)
       setSelectedTags(filteredTags)
     } else {
-      setSelectedTags(prevState => [...prevState, tagName])
+
+      const newSelectedTags = [...selectedTags, tagName]
+
+      if (newSelectedTags.length === tags.length) {
+        setSelectedTags([])
+      } else {
+        setSelectedTags(newSelectedTags)
+      }
+
     }
   }
 
@@ -101,7 +113,7 @@ export function Home() {
                 data={note}
               />
             ))
-          } 
+          }
 
         </Section>
       </Content>
