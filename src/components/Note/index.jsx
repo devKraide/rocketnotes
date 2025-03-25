@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
-import { NoteContainer, HLink } from './style';
+import { NoteContainer, NoteTitle } from './style';
 import { Tag } from '../Tag';
 
 export function Note({ data, ...rest }) {
   return (
     <NoteContainer  {...rest}>
-      <HLink to="/details/:id">{data.title}</HLink>
+      <NoteTitle>{data.title}</NoteTitle>
       {
         data.tags &&
         <footer>

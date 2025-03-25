@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import {Link} from "react-router-dom";
 
 
 // ...existing code...
@@ -23,7 +22,7 @@ export const NoteContainer = styled.button`
 `;
 
 
-export const HLink = styled(Link)` 
+export const NoteTitle = styled.div` 
   flex: 1;
   text-align: left;
   font-weight: 700;
