@@ -13,8 +13,12 @@ import { Note } from '../../components/Note';
 
 export function Home() {
 
-  const [tags, setTags] = useState('')
-  const [selectedTags, setSelectedTags] = useState('')
+  const [search, setSearch] = useState('')
+  const [note, setNote] = useState([])
+
+  const [selectedTags, setSelectedTags] = useState([])
+  const [tags, setTags] = useState([])
+
 
   function handleSelectedTag(tagName) {
     const alreadySelected = selectedTags.includes(tagName)
@@ -36,6 +40,15 @@ export function Home() {
 
     fetchTags()
   }, [])
+
+  useEffect(() => {
+    async function fetchNotes() {
+      const response = await api.get(`/notes?title=${search}&tags=${selectedTags}`)
+      setNote(response.data)
+    }
+
+    fetchNotes()
+  }, [selectedTags, search])
 
   return (
     <Container>
@@ -73,19 +86,23 @@ export function Home() {
       </Menu>
 
       <Search>
-        <Input placeholder="Pesquisar notas" />
+        <Input
+          placeholder="Pesquisar notas"
+          onChange={e => setSearch(e.target.value)}
+        />
       </Search>
 
       <Content>
         <Section title="Minhas notas">
-          <Note data={{
-            title: 'React',
-            tags: [
-              { id: '1', name: 'react' },
-              { id: '2', name: 'rocketseat' }
-            ]
-          }}
-          />
+          {
+            note.map(note => (
+              <Note
+                key={String(note.id)}
+                data={note}
+              />
+            ))
+          } 
+
         </Section>
       </Content>
 
