@@ -2,12 +2,13 @@ import { NoteItem } from "../../components/NoteItem";
 import { TextArea } from "../../components/TextArea";
 import { Section } from "../../components/Section";
 import { Button } from "../../components/Button";
+import { ButtonText } from "../../components/ButtonText";
 import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 import { api } from "../../services/api";
 import { useState } from "react";
 
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { NewContainer, Form } from "./style";
 
@@ -49,13 +50,17 @@ export function New() {
 
   const navigate = useNavigate();
 
+  function handleBack() {
+    navigate(-1);
+  }
+
   async function handleNewNote() {
 
-    if(!title){
+    if (!title) {
       return alert("Por favor, insira o título da nota")
     }
 
-    if(newTag || newLink){
+    if (newTag || newLink) {
       return alert("Links ou Tags não confirmados serão perdidos! Por favor, revise os campos de texto.")
 
     }
@@ -68,7 +73,7 @@ export function New() {
     })
 
     alert('Nota cadastrada com sucesso!')
-    navigate("/")
+    navigate(-1)
   }
 
 
@@ -81,7 +86,10 @@ export function New() {
 
           <header>
             <h1>Criar nota</h1>
-            <Link to="/">voltar</Link>
+            <ButtonText
+              title='Voltar'
+              onClick={handleBack}
+            />
           </header>
 
           <Input
@@ -137,7 +145,7 @@ export function New() {
 
           </Section>
 
-          <Button title="Salvar" onClick={handleNewNote}/>
+          <Button title="Salvar" onClick={handleNewNote} />
         </Form>
       </main>
 
